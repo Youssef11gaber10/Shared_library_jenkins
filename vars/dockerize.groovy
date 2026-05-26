@@ -33,17 +33,18 @@ def call (String repo_name="youssef11gaber10/jenkins-nodeapp",String tag="latest
 
 
      withCredentials([usernamePassword(
-                        credentialsId: '${credentialsId}',
+                        credentialsId: credentialsId,
                         usernameVariable: 'DOCKER_USERNAME',
                         passwordVariable: 'DOCKER_PASSWORD'
                     )]) {
                         sh 'docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD'
                     }
 
-                    sh '''
+                    sh """
                         docker build -t ${repo_name}:${tag} .
                         docker push ${repo_name}:${tag}
-                    '''
+                    """
+
 
         
 }
