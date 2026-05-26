@@ -28,8 +28,8 @@
 // }
 
 
-// is groovy function 
-def dockerize_func (String repo_name="youssef11gaber10/jenkins-nodeapp",String tag="latest", String credentialsId="dockerhub-credential-id"){  // make your input and this is default value
+// is groovy function  must named call
+def call (String repo_name="youssef11gaber10/jenkins-nodeapp",String tag="latest", String credentialsId="dockerhub-credential-id"){  // make your input and this is default value
 
 
      withCredentials([usernamePassword(
